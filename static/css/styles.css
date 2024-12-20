@@ -1,0 +1,111 @@
+body {
+  background-color: black!important;
+}
+
+h1 {
+  font-family: "Funnel Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+}
+
+.quiz-container {
+  background-color: white;
+  color: black;
+  padding: 60px;
+}
+
+.how-to-pay {
+  background-color: white;
+  color: black;
+
+}
+
+.button {
+  border-color: #E5E900;
+  color: #E5E900;
+  background-color: black;
+  font-weight: bold;
+  padding: 20px 40px;
+  font-size: 20px;
+  border-style: solid;
+}
+
+#back-btn {
+  transform: rotate(180deg);
+
+}
+
+.landing-page-first  {
+  margin: 130px 70px 70px 70px;
+  height: 70vh;
+}
+
+.slogan {
+  font-size: 70px;
+  color: white;
+  font-family: "Funnel Display", serif;
+  font-optical-sizing: auto;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.margin-right-50 {
+  margin-right: 50px;
+}
+
+.landing-page-image {
+  width: 600px;
+}
+
+.quiz {
+  justify-items: center;
+  padding: 60px;
+}
+
+.quiz-slide {
+  width: 50%;
+}
+
+.back-btn {
+  width: 20%;
+}
+
+.quiz-border {
+  border: 1px solid;
+  border-radius: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+  .landing-page-first {
+    margin: 100px 0px 0px 0px;
+    display: grid!important;
+    justify-content: initial!important;
+  }
+
+  .slogan {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+  }
+
+  .button {
+    padding: 10px 10px;
+    font-size: initial;
+  }
+
+  .landing-page-image {
+    width: 100%;
+  }
+
+  .large-heading-button {
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .nav-btn {
+    width: 50%;
+  }
+}

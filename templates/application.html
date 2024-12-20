@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arena</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+</head>
+<body>
+  <header class="navbar navbar-expand-lg navbar-light navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="d-flex">
+        <a href="{{ url_for('home') }}" class="btn navbar-fixed-color navbar-options-text navbar-text"><img src="{{ url_for('static', filename='images/arena logo.png') }}" alt="Logo" ></a>
+      </div>
+      <div class="d-flex justify-content-end align-items-end" style="height: 100%;">
+        <div class="nav-container d-flex justify-content-between">
+          <div class="options d-flex justify-content-between gap">
+            <a href="{{ url_for('home') }}" class="btn navbar-fixed-color navbar-options-text navbar-text">BOOK VENUE</a>
+            <a href="{{ url_for('home') }}" class="btn navbar-fixed-color navbar-options-text navbar-text">CONTACT</a>
+            <a href="{{ url_for('home') }}" class="btn navbar-fixed-color navbar-options-text navbar-text">LOGIN</a>
+          </div>
+          <div class="nav-icons nav-options">
+            <div id="mySidebar" class="sidebar">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              <a href="{{ url_for('home') }}" class="btn navbar-options-text navbar-text">BOOK VENUE</a>
+              <a href="{{ url_for('home') }}" class="btn navbar-options-text navbar-text">CONTACT</a>
+              <a href="{{ url_for('home') }}" class="btn navbar-options-text navbar-text">LOGIN</a>
+              </div>
+            <div id="main">
+              <button class="openbtn" onclick="openNav()">&#9776;</button>
+            </div>
+            <script>
+              function openNav() {
+                document.getElementById("mySidebar").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+                document.querySelector(".openbtn").style.opacity = "0";
+                document.querySelector(".alerts").style.opacity = "0";
+              }
+
+              function closeNav() {
+                document.getElementById("mySidebar").style.width = "0";
+                document.getElementById("main").style.marginLeft = "0";
+                document.querySelector(".openbtn").style.opacity = "1";
+                document.querySelector(".alerts").style.opacity = "1";
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="landing-page-container">
+    {% block content %}
+    {% endblock %}
+  </div>
+  <footer>
+    {% block footer %}
+    {% endblock %}
+  </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

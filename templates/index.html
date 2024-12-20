@@ -1,0 +1,112 @@
+{% extends "application.html" %}
+
+
+{% block content %}
+<div class="d-flex justify-content-between landing-page-first text-center">
+  <div class="d-flex flex-column justify-content-between large-heading-button">
+    <h1 class="text-start slogan">We’re On A Mission<br>To Change The<br>Landscape Of Sports,<br>FOREVER.</h1>
+    <button href="#" class="button width-50">JOIN WAITLIST</button>
+  </div>
+  <div>
+    <img class="landing-page-image" src="{{ url_for('static', filename='images/arena-landing-page.png') }}" alt="Sunset Basketball Pic">
+  </div>
+</div>
+
+<div class="quiz-container">
+  <div class="quiz-border">
+    <div class="navigation">
+      <button id="back-btn" style="background: none; border: none;">
+        <img class="back-btn nav-btn" src="{{ url_for('static', filename='images/arrow.png') }}" alt="Next">
+      </button>
+    </div>
+    <!-- Question Slides -->
+    <div class="d-grid quiz">
+      <div id="quiz-slide-0" class="quiz-slide">
+        <h1>Try Our Personalised Session Finder</h1>
+        <p>Booking Your Next Game Doesn't Have To Be Complicated. Try our Personalised Session Finder to make it easy! Simply click the arrow below and tell us a bit about yourself—such as your favourite sports, location, and availability—and we’ll recommend the best sessions tailored to your preferences.</p>
+      </div>
+      <div id="quiz-slide-1" class="quiz-slide" style="display: none;">
+          <h2>What’s your full name?</h2>
+          <input type="text" id="full-name" name="full_name" placeholder="Enter your full name" required>
+      </div>
+
+      <div id="quiz-slide-2" class="quiz-slide" style="display: none;">
+          <h2>What’s your phone number?</h2>
+          <input type="tel" id="phone-number" name="phone_number" placeholder="Enter your phone number" required>
+      </div>
+
+      <div id="quiz-slide-3" class="quiz-slide" style="display: none;">
+          <h2>What’s your gender?</h2>
+          <select id="gender" name="gender" required>
+              <option value="" disabled selected>Select your gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="non-binary">Non-Binary</option>
+              <option value="prefer-not-to-say">Prefer not to say</option>
+          </select>
+      </div>
+
+      <div id="quiz-slide-4" class="quiz-slide" style="display: none;">
+          <h2>What is your preferred gender for sport?</h2>
+          <select id="gender-preference" name="gender_preference" required>
+              <option value="" disabled selected>Select your gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="any">Any</option>
+              <option value="non-binary">Non-Binary</option>
+          </select>
+      </div>
+
+      <div id="quiz-slide-5" class="quiz-slide" style="display: none;">
+          <h2>What’s your age range?</h2>
+          <select id="age" name="age_range" required>
+            <option value="18-25">18-25</option>
+            <option value="26-35">26-35</option>
+            <option value="36-45">36-45</option>
+            <option value="46-60">46-60</option>
+            <option value="46-60">61-75</option>
+            <option value="46-60">76+</option>
+          </select>
+      </div>
+
+      <div id="quiz-slide-6" class="quiz-slide" style="display: none;">
+          <h2>Where are you located?</h2>
+          <select id="location" name="location" required>
+              <option value="" disabled selected>Select your location</option>
+              <option value="north-london">North London</option>
+              <option value="south-london">South London</option>
+              <option value="east-london">East London</option>
+              <option value="west-london">West London</option>
+          </select>
+      </div>
+
+      <div id="quiz-slide-7" class="quiz-slide" style="display: none;">
+          <h2>What sports do you enjoy?</h2>
+          <label><input type="checkbox" name="favourite_sports" value="football"> Football</label><br>
+          <label><input type="checkbox" name="favourite_sports" value="basketball"> Basketball</label><br>
+          <label><input type="checkbox" name="favourite_sports" value="tennis"> Tennis</label><br>
+          <label><input type="checkbox" name="favourite_sports" value="cricket"> Cricket</label><br>
+          <label><input type="checkbox" name="favourite_sports" value="rugby"> Rugby</label><br>
+          <label><input type="checkbox" name="favourite_sports" value="rugby"> Netball</label><br>
+          <label><input type="checkbox" name="favourite_sports" value="other"> Other: <input type="text" id="custom-sport" placeholder="Specify other sport"></label>
+      </div>
+      <div id="results-container"></div>
+      <div class="navigation">
+        <button id="next-btn" style="background: none; border: none;" class="">
+          <img class="next-btn nav-btn"  src="{{ url_for('static', filename='images/arrow.png') }}" alt="Next">
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="{{ url_for('static', filename='javascript/quiz.js') }}"></script>
+
+<div class="our-feautures">
+  <h1 style="color: white;">Our Features</h1>
+  <button class="button">BROWSE VENUES</button>
+</div>
+
+<div class="how-to-pay">
+  <h1>How to Make a Payment</h1>
+</div>
+{% endblock %}
