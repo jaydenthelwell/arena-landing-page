@@ -14,12 +14,12 @@
 
 <div class="quiz-container">
   <div class="quiz-border">
+    <!-- Question Slides -->
     <div class="navigation">
-      <button id="back-btn" style="background: none; border: none;">
+      <button id="back-btn" style="background: none; border: none; display:none;">
         <img class="back-btn nav-btn" src="{{ url_for('static', filename='images/arrow.png') }}" alt="Next">
       </button>
     </div>
-    <!-- Question Slides -->
     <div class="d-grid quiz">
       <div id="quiz-slide-0" class="quiz-slide">
         <h1>Try Our Personalised Session Finder</h1>
@@ -93,6 +93,11 @@
       <div id="results-container"></div>
       <div class="navigation">
         <button id="next-btn" style="background: none; border: none;" class="">
+          <img class="next-btn nav-btn"  src="{{ url_for('static', filename='images/arrow.png') }}" alt="Next">
+        </button>
+      </div>
+      <div class="view-results-button">
+        <button id="view-results" style="background: none; border: none;" class="d-none">
           <img class="next-btn nav-btn"  src="{{ url_for('static', filename='images/arrow.png') }}" alt="Next">
         </button>
       </div>

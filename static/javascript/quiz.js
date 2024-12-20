@@ -4,6 +4,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const nextBtn = document.getElementById("next-btn");
   const backBtn = document.getElementById("back-btn");
 
+  function updateNavigation() {
+    if ((currentSlide > 0) && (currentSlide != 8)) {
+      backBtn.style.display = "block";
+    } else if (currentSlide == 8) {
+
+    } else {
+      backBtn.style.display = "none";
+    }
+  }
+
   function showNextSlide() {
     //make current slide by invisible
     document.getElementById(`quiz-slide-${currentSlide}`).style.display = "none";
@@ -120,6 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // document.getElementById(`quiz-slide-${currentSlide}`).style.display = "block";
   nextBtn.addEventListener("click", function () {
+
     //checks is the current slide is not the first
     if (currentSlide > 0) {
       const currentInputs = document.querySelectorAll(`#quiz-slide-${currentSlide} input, #quiz-slide-${currentSlide} select`);
@@ -148,9 +159,9 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Please complete all fields or select at least one checkbox.");
       }
     } else {
-
       //  move to next slide if on the first slide (slide 0)
       showNextSlide();
+      updateNavigation()
     }
 
   });
@@ -159,5 +170,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (currentSlide > 0) {
       showPreviousSlide();
     }
+    updateNavigation()
   });
 });

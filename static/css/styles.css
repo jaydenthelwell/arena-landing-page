@@ -32,7 +32,14 @@ h1 {
 
 #back-btn {
   transform: rotate(180deg);
+  width: 10%;
+  margin: 30px;
+}
 
+#back-btn img {
+  width: 100%; /* Make the image fill the button's width */
+  height: 100%; /* Make the image fill the button's height */
+  object-fit: cover; /* Ensure the image scales to fit the button */
 }
 
 .landing-page-first  {
@@ -61,11 +68,12 @@ h1 {
 
 .quiz {
   justify-items: center;
-  padding: 60px;
+  gap: 40px;
+  padding: 0px 70px 70px 70px;
 }
 
 .quiz-slide {
-  width: 50%;
+  width: 60%;
 }
 
 .back-btn {
@@ -75,6 +83,11 @@ h1 {
 .quiz-border {
   border: 1px solid;
   border-radius: 50px;
+}
+
+p {
+  font-size: 23px;
+  font-weight: 200;
 }
 
 @media only screen and (max-width: 768px) {
